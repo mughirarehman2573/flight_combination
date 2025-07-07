@@ -57,14 +57,10 @@ Make sure you have **Python 3.10** installed on your computer.
 ### Set the request method to POST
 
 - Paste this as the request URL:
-- http://localhost:8000/generate-itineraries
-- Click the Body tab
-- Select raw and choose JSON from the dropdown
 
-- Paste this JSON into the body:
-
-
-{
+curl --location 'http://127.0.0.1:8000/generate-itineraries' \
+--header 'Content-Type: application/json' \
+--data '{
   "general": {
     "departure_date_range": ["2025-08-01", "2025-08-03"],
     "total_stay_range": [3, 5],
@@ -91,8 +87,7 @@ Make sure you have **Python 3.10** installed on your computer.
       }
     }
   ]
-}
-
+}'
 
 ### Click Send
 
